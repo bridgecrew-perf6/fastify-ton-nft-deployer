@@ -8,3 +8,19 @@
 
 ### How to deploy NFT:
 - `chmod +x ./deploy_nft_item.sh && ./deploy_nft_item.sh`
+
+### Request schema:
+
+`{
+  walletMnemonic: string,
+  walletType: string,
+  nftCollectionAddress: string,
+  nftItemOwnerAddress: string,
+  nftItemContentUri: string
+}`
+
+### Response schema:
+
+`{
+  nftItemAddress: string
+}`
