@@ -1,0 +1,25 @@
+{
+  "name": "fastify-ton-nft-deployer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pantemon/fastify-ton-nft-deployer.git",
+  "author": "Illia Malovanyi <xxffwwoqqzz@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "test": "tap --no-timeout",
+    "prettier": "npx prettier --check . && npx prettier --write ."
+  },
+  "dependencies": {
+    "@types/node": "^17.0.35",
+    "bn.js": "^5.2.0",
+    "fastify": "^3.29.0",
+    "fluent-json-schema": "^3.1.0",
+    "tonweb": "^0.0.40",
+    "tonweb-mnemonic": "^1.0.1"
+  },
+  "devDependencies": {
+    "prettier": "2.6.2",
+    "tap": "^16.2.0"
+  }
+}
