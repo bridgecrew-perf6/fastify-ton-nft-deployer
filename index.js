@@ -30,11 +30,10 @@ app.post(
   "/deployNftItem",
   { schema: { body: bodySchema } },
   async (request, reply) => {
-    const tonweb = new TonWeb(
-      new TonWeb.HttpProvider(
-        "https://testnet.toncenter.com/api/v2/jsonRPC?api_key=1a2a0eb3a25499b9fdac4727280d9531fa70b005af2f591d6bb7dba9a6a83186"
-      )
-    );
+    const tonApiUrl = "https://testnet.toncenter.com/api/v2/jsonRPC";
+    const tonApiKey = "1a2a0eb3a25499b9fdac4727280d9531fa70b005af2f591d6bb7dba9a6a83186";
+
+    const tonweb = new TonWeb(new TonWeb.HttpProvider(`${tonApiUrl}?api_key=${tonApiKey}`));
 
     const walletMnemonicString = request.body.walletMnemonic;
     const walletMnemonic = walletMnemonicString.split(" ");
