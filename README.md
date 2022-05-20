@@ -7,7 +7,7 @@
 - `yarn start`
 
 ### How to deploy NFT:
-- `chmod +x ./deploy_nft_item.sh && ./deploy_nft_item.sh`
+- `chmod +x ./scripts/* && ./scripts/deploy_nft_item.sh`
 
 ### Request schema:
 
