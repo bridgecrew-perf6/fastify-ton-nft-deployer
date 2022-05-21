@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/node": "^17.0.35",
     "bn.js": "^5.2.0",
+    "dotenv": "^16.0.1",
     "fastify": "^3.29.0",
     "fluent-json-schema": "^3.1.0",
     "tonweb": "^0.0.40",

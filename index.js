@@ -2,6 +2,9 @@ const S = require("fluent-json-schema");
 const TonWeb = require("tonweb");
 const TonMnemonic = require("tonweb-mnemonic");
 
+// loads environment variables
+require("dotenv").config();
+
 const deployer = require("./deployer.js");
 
 const app = require("fastify")({
@@ -30,8 +33,8 @@ app.post(
   "/deployNftItem",
   { schema: { body: bodySchema } },
   async (request, reply) => {
-    const tonApiUrl = "https://testnet.toncenter.com/api/v2/jsonRPC";
-    const tonApiKey = "1a2a0eb3a25499b9fdac4727280d9531fa70b005af2f591d6bb7dba9a6a83186";
+    const tonApiUrl = process.env.TON_API_URL;
+    const tonApiKey = process.env.TON_API_KEY;
 
     const tonweb = new TonWeb(new TonWeb.HttpProvider(`${tonApiUrl}?api_key=${tonApiKey}`));
 
@@ -77,7 +80,7 @@ app.post(
   }
 );
 
-app.listen(3000, (err, address) => {
+app.listen(process.env.PORT, process.env.HOST, (err, address) => {
   if (err) {
     app.log.error(err);
     process.exit(1);
